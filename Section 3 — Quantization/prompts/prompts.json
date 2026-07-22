@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "category": "reasoning",
+    "prompt": "A bat and a ball together cost $1.10. The bat costs $1.00 more than the ball. How much does the ball cost? Explain your reasoning step by step.",
+    "reference_answer": "The ball costs $0.05. Let x be the cost of the ball. The bat costs x + $1.00. The total cost is x + (x + $1.00) = $1.10. Therefore, 2x + $1.00 = $1.10, which means 2x = $0.10, so x = $0.05."
+  },
+  {
+    "id": 2,
+    "category": "coding",
+    "prompt": "Write a Python function that accepts a list of integers and returns the two numbers that sum closest to zero. Include docstring, type hints, and one usage example.",
+    "reference_answer": "def closest_to_zero(nums: list[int]) -> tuple[int, int]:\n    nums.sort()\n    left, right = 0, len(nums) - 1\n    min_sum = float('inf')\n    closest_pair = ()\n    while left < right:\n        current_sum = nums[left] + nums[right]\n        if abs(current_sum) < abs(min_sum):\n            min_sum = current_sum\n            closest_pair = (nums[left], nums[right])\n        if current_sum < 0:\n            left += 1\n        elif current_sum > 0:\n            right -= 1\n        else:\n            break\n    return closest_pair"
+  },
+  {
+    "id": 3,
+    "category": "summarization",
+    "prompt": "Summarize the following paragraph in exactly two sentences:\n\n'The transformer architecture, introduced in the 2017 paper Attention Is All You Need, replaced recurrent networks with self-attention mechanisms, enabling parallelization during training and dramatically improving performance on sequence-to-sequence tasks such as translation and text summarization.'",
+    "reference_answer": "The transformer architecture replaced recurrent networks with self-attention mechanisms in 2017. This change enabled parallelization during training and significantly improved performance on sequence-to-sequence tasks."
+  },
+  {
+    "id": 4,
+    "category": "translation",
+    "prompt": "Translate the following sentence from English to French, then back to English, and note any meaning changes:\n\n'The early bird catches the worm, but the second mouse gets the cheese.'",
+    "reference_answer": "L'oiseau matinal attrape le ver, mais la deuxième souris obtient le fromage. Translation back to English: The morning bird catches the worm, but the second mouse gets the cheese. The meaning remains largely the same, preserving the contrasting idioms."
+  },
+  {
+    "id": 5,
+    "category": "factual_qa",
+    "prompt": "What is the difference between supervised learning and unsupervised learning? Give one real-world example of each.",
+    "reference_answer": "Supervised learning uses labeled data to train models to predict outcomes, while unsupervised learning finds patterns in unlabeled data. An example of supervised learning is email spam classification, and an example of unsupervised learning is customer segmentation."
+  }
+]

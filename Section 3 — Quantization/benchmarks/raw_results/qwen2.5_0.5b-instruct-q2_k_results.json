@@ -1,0 +1,52 @@
+{
+  "model": "qwen2.5:0.5b-instruct-q2_k",
+  "timestamp": "2026-07-22T22:30:25.414520",
+  "peak_ram_mb": 124.51953125,
+  "prompts": [
+    {
+      "id": 1,
+      "category": "reasoning",
+      "generated_text": "To determine how much the ball costs, we can follow these steps:\n\n1. **Identify the total cost and the difference:** \n   - The total cost of both the bat and the ball together is $1.10.\n   - Additionally, the bat costs $1.00 more than the ball.\n\n2. **Set up an equation:**\n   - Let \\( B \\) be the price of the ball in dollars.\n   - Therefore, the price of the bat is \\( B + 1 \\).\n\n3. **Formulate the total cost inequality:**\n   - The total cost including the additional cost is $1.00 more than the total cost of the ball and bat together.\n\n4. **Write the equation:**\n   - \\( (B + 1) + B = B + B + 1 \\)\n\n5. **Simplify the equation:**\n   - Combine like terms: \\( 2B + 1 \\)\n   - Therefore, \\( 2B + 1 = B + B + 1 \\).\n\n6. **Set up and solve the inequality:**\n   - Subtract \\( B \\) from both sides to isolate \\( B \\):\n     - \\( 2B + 1 - B = B + B + 1 - B \\)\n     - Simplify further:\n       - \\( B + 1 = B + 1 \\)\n\n7. **Solve for the cost:**\n   - Subtract \\( B \\) from both sides to isolate \\( B \\):\n     - \\( B + 1 - B = B + B - B + 1 - B \\)\n     - Simplify further:\n       - \\( B + 1 - B = B + (B - B) + 1 - B \\)\n       - This simplifies to: \n         - \\( B + 1 - B = B + 0 \\)\n\n8. **Solve for the cost by subtracting \\( B \\) from both sides:**\n   - Subtract \\( B \\) from both sides:\n     - Therefore, \\( 0 = B - B \\)\n     - Simplify further:\n       - Therefore, \\( 0 = -B + B \\)\n       - This simplifies to: \n         - Therefore, \\( 0 = -B + B \\)\n\n9. **Solve for the cost by adding \\( B \\) to both sides:**\n   - Add \\( B \\) to both sides:\n     - Therefore, \\( B + B = B + (-B) + B \\)\n     - Simplify further:\n       - Therefore, \\( 2B + B = 1.00 + 0.00 + 1.00 \\)\n\n10. **Solve for the cost:**\n    - Combine like terms:\n      - Subtract \\( B \\) from both sides:\n        - Therefore, \\( 2B + B = 1.00 + 0.00 + 1.00 \\)\n        - Simplify further:\n          - \\( 2B + B = 1.00 + 0.00 + 1.00 \\)\n\n11. **Solve for the cost by adding and subtracting:**\n    - Add both sides to get:\n      - Therefore, \\( (2B + B) = (B + B) + (B + 1 + 1) \\)\n        - Simplify further:\n          - \\( 3B = 1.00 + 1.00 + 1.00 \\)\n\n12. **Solve for the cost:**\n    - Solve for \\( B \\):\n      - Therefore, \\( 3B = (1.00 + 1.00) + 1.00 = 2.00 \\)\n        - Simplify further:\n          - Therefore, \\( 3B = 2.00 \\)\n\n13. **Solve for the cost by dividing both sides by 3:**\n    - Divide both sides by 3:\n      - Therefore, \\( B = \\frac{2.00}{3} \\)\n        - Simplify further:\n          - Therefore, \\( B = 0.67 \\)\n\n14. **Solve for the ball price:**\n    - Therefore, \\( B = 0.67 \\)\n\nTherefore, the ball costs $0.67.\n\nBy solving this step-by-step approach, we find that the cost of the ball is $0.67.",
+      "latency_ms": 3691.7376,
+      "throughput_tok_sec": 253.81002160066848,
+      "rouge_l_f1": 0.1210762331838565,
+      "quality_flag_passed": true
+    },
+    {
+      "id": 2,
+      "category": "coding",
+      "generated_text": "```python\ndef find_two_sum_closest_to_zero(numbers):\n    \"\"\"\n    Finds two numbers in the given list such that their sum is as close as possible to zero.\n\n    Args:\n    - numbers: A list of integers\n\n    Returns:\n    - A tuple (a, b) where a + b is closest to zero, or None if no such pair exists.\n    \"\"\"\n    n = len(numbers)\n    # Create a sorted dictionary for the difference from 0\n    diff_to_zero_dict = {abs(0 - numbers[i]) for i in range(n)}\n\n    # Find pairs of numbers whose sum is as close as possible to zero\n    closest_sum_pair = None\n    closest_diff = float(\"inf\")\n\n    for i in range(n):\n        if diff_to_zero_dict:\n            for j, diff in enumerate(diff_to_zero_dict):\n                if abs(0 - numbers[i]) + abs(0 - numbers[j]) <= closest_diff:\n                    closest_diff = abs(0 - numbers[i]) + abs(0 - numbers[j])\n                    closest_sum_pair = (numbers[i], numbers[j])\n\n    return closest_sum_pair\n\n# Usage example\nif __name__ == \"__main__\":\n    from typing import List\n    from collections import defaultdict\n    from typing import TypeVar as TVar\n    from functools import reduce\n    from operator import add\n\n    def find_closest_two_to_zero(numbers: List[TVar]) -> List[TVar]:\n        \"\"\"\n        Finds two numbers in the given list such that their sum is closest to zero.\n        \n        Args:\n        - numbers: A list of integers\n        \n        Returns:\n        - A tuple (a, b) where a + b is closest to zero or None if no such pair exists.\n        \"\"\"\n        target_sum = 0\n        closest_pair = (None, None)\n        diff_to_zero_dict = defaultdict(lambda: float(\"inf\"))\n        \n        for i, num in enumerate(numbers):\n            diff_to_zero_dict[num] = add(diff_to_zero_dict.get(num, float(\"inf\")), abs(0 - num))\n        \n        for target, sum_diff in diff_to_zero_dict.items():\n            if closest_pair is None or (abs(target) + abs(sum_diff)) < closest_difference:\n                closest_difference = abs(target) + abs(sum_diff)\n                closest_pair = (target, sum_diff)\n\n        return closest_pair\n```\n\n**Explanation:**\n\n1. **Function Definition:** \n   - `find_two_sum_closest_to_zero(numbers)` is a function that accepts a list of integers and returns the two numbers such that their sum is closest to zero.\n   - It uses a `defaultdict` to store the differences from 0 for each number, which helps in finding pairs whose difference is close to zero.\n\n2. **Helper Function:**\n   - `find_closest_two_to_zero(numbers)` is used as a helper function within `find_two_sum_closest_to_zero`.\n   - This function iterates over the list of numbers, stores their differences from 0 in `diff_to_zero_dict`, and then finds the pair whose sum is closest to zero.\n\n3. **Example Usage:**\n   - The example usage (`if __name__ == \"__main__\"`) calls the helper function with a sample list of integers.\n   - It prints the result, which is either None if no such pair exists or the tuple that results in a closer sum to zero than the previous minimum.\n\n**Note:** This solution uses Python 3.10 and does not support `TVar` for type hinting and handling string types differently.",
+      "latency_ms": 2843.8214,
+      "throughput_tok_sec": 257.7517702061037,
+      "rouge_l_f1": 0.11009174311926606,
+      "quality_flag_passed": true
+    },
+    {
+      "id": 3,
+      "category": "summarization",
+      "generated_text": "The Transformer architecture utilizes self-attentive mechanisms to enable parallelizing training and optimizing performance in sequence-to-sequence tasks, leading to significant improvements in both translation and text summarization.",
+      "latency_ms": 142.3769,
+      "throughput_tok_sec": 266.89722841275517,
+      "rouge_l_f1": 0.5357142857142857,
+      "quality_flag_passed": true
+    },
+    {
+      "id": 4,
+      "category": "translation",
+      "generated_text": "The translation of \"The early bird catches the worm, but the second mouse gets the cheese.\" in French is: \"L'oiseau d'en bas en proie mais l'oiseau du deuxi\u00e8me mouchet \u00e0 la main.\"\n\nThis sentence means that early birds quickly obtain food (worms), while slow creatures such as mice get food from other sources. The only difference between the sentences is the use of \"the\" in the first sentence and \"la main\" or \"la t\u00eate\" in the second, which have different meanings in French.\n\nNote: In English, if someone says \"The early bird catches the worm,\" it means they can easily find food (worms), often due to their eagerness. However, if someone said \"The slow mouse gets the cheese,\" it means it is difficult for them to obtain food from other sources, as mice usually have a slower food chain compared to birds.",
+      "latency_ms": 707.335,
+      "throughput_tok_sec": 261.5450953225841,
+      "rouge_l_f1": 0.18181818181818182,
+      "quality_flag_passed": true
+    },
+    {
+      "id": 5,
+      "category": "factual_qa",
+      "generated_text": "Supervised learning and unsupervised learning are both types of machine learning algorithms used for classification or prediction tasks but they have different ways in which data is fed into these algorithms to train them.\n\nIn supervised learning, the target label for a given input is provided. A model can be trained to predict the correct output by adjusting its parameters based on the difference between predicted and actual values. For example, if you wanted to classify a photo as either being of a cat or a dog, then you could feed it a series of images (a cat and a dog) and let the computer learn to distinguish between them.\n\nIn unsupervised learning, no target label is provided for predictions. Unsupervised learning algorithms aim to discover patterns in unlabeled data by finding the similarity between different samples of data without knowing their labels. For example, if you wanted to find similarities in social media posts (such as what kind of language was used or how many times certain hashtags were used), then unsupervised clustering algorithm would be used.\n\nThe two types of learning methods differ in terms of the type of tasks they are capable of solving and the data fed into the algorithms.",
+      "latency_ms": 879.2985,
+      "throughput_tok_sec": 263.8466914250394,
+      "rouge_l_f1": 0.16597510373443983,
+      "quality_flag_passed": true
+    }
+  ]
+}
