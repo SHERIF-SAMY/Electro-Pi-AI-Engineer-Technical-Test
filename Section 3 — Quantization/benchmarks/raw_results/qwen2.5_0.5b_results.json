@@ -1,0 +1,52 @@
+{
+  "model": "qwen2.5:0.5b",
+  "timestamp": "2026-07-22T22:30:09.672482",
+  "peak_ram_mb": 88.14453125,
+  "prompts": [
+    {
+      "id": 1,
+      "category": "reasoning",
+      "generated_text": "To solve this problem, let's define some variables:\n\n- Let \\( x \\) be the cost of the ball.\n- Since the bat costs \\$1.00 more than the ball, we can express the cost of the bat as \\( x + 1 \\).\n\nAccording to the information given in the problem:\n1. The total cost of both the bat and the ball is $1.10.\n\nThis can be written as an equation:\n\\[\nx + (x + 1) = 1.10\n\\]\n\nNow, let's solve this equation step by step:\n\nStep 1: Combine like terms.\n\\[\nx + x + 1 = 1.10\n\\]\n\\[\n2x + 1 = 1.10\n\\]\n\nStep 2: Subtract 1 from both sides to isolate the term with \\( x \\).\n\\[\n2x + 1 - 1 = 1.10 - 1\n\\]\n\\[\n2x = 0.10\n\\]\n\nStep 3: Divide both sides by 2 to solve for \\( x \\).\n\\[\n\\frac{2x}{2} = \\frac{0.10}{2}\n\\]\n\\[\nx = 0.05\n\\]\n\nSo, the cost of the ball is $0.05.\n\nTherefore, the bat costs $1.00 more than the ball, and the total cost is:\n- Ball: \\( 0.05 \\)\n- Bat: \\( 0.05 + 1 = 1.00 \\)\n\nThe final answer is \\( \\boxed{0.05} \\) for the cost of the ball and \\( \\boxed{1.00} \\) for the cost of the bat.",
+      "latency_ms": 1441.6287,
+      "throughput_tok_sec": 260.12245732899186,
+      "rouge_l_f1": 0.2689075630252101,
+      "quality_flag_passed": true
+    },
+    {
+      "id": 2,
+      "category": "coding",
+      "generated_text": "Certainly! Here's an example Python function that meets your requirements:\n\n```python\nfrom typing import List\n\ndef find_two_numbers_with_closest_sum_to_zero(numbers: List[int]) -> List[int]:\n    \"\"\"\n    Finds two numbers in the given list of integers whose sum is closest to zero.\n\n    Args:\n        numbers (List[int]): A list of integers.\n\n    Returns:\n        List[int]: A tuple containing the two numbers whose sum is closest to zero.\n                   If there are multiple pairs, return any one of them.\n\n    Raises:\n        TypeError: If 'numbers' is not a list or if it contains non-integer values.\n\n    Examples:\n        >>> find_two_numbers_with_closest_sum_to_zero([10, 5, -7])\n        [-7, 10]\n\n        >>> find_two_numbers_with_closest_sum_to_zero([-1, -2, -3, 4])\n        [4, -1]\n    \"\"\"\n    \n    # Ensure the list contains only integers\n    if not all(isinstance(num, int) for num in numbers):\n        raise TypeError(\"All elements in 'numbers' must be of type int.\")\n    \n    # Sort the numbers to make it easier to find the closest pair\n    numbers.sort()\n    \n    # Initialize variables to store the closest sum and indices\n    min_sum = float('inf')\n    min_index_1, min_index_2 = -1, -1\n    \n    # Iterate through the sorted list to find the two closest pairs\n    for i in range(len(numbers) - 1):\n        if numbers[i] + numbers[i + 1] < 0:\n            min_sum = abs(numbers[i] + numbers[i + 1])\n            min_index_1, min_index_2 = (i, i + 1)\n    \n    # Return the closest pair\n    return (numbers[min_index_1], numbers[min_index_2])\n\n# Example usage: get_closest_pair([-40, -10, 7, 6, -3])\n```\n\nIn this code:\n\n- The `find_two_numbers_with_closest_sum_to_zero` function takes a single argument `numbers`, which is assumed to be a list of integers.\n- It first checks if all elements in the list are integers using type hints. If not, it raises a `TypeError`.\n- The numbers are sorted to facilitate finding the two closest pairs more easily.\n- A loop iterates through the sorted list of numbers to find pairs whose sum is closest to zero. Two variables (`min_sum`, `min_index_1` and `min_index_2`) are used to keep track of the minimum absolute difference found and their corresponding index.\n- The function returns a tuple containing the two numbers that form this pair.\n\nYou can use this function by calling it with a list of integers like so:\n\n```python\nnumbers = [-40, -10, 7, 6, -3]\nclosest_pair = find_two_numbers_with_closest_sum_to_zero(numbers)\nprint(closest_pair)  # Output: (-10, 6)\n```\n\nThis solution assumes that the input list does not contain non-integer values or that they are integers. If there are other integer types present in your data, you will need to adjust `numbers.sort()` accordingly.",
+      "latency_ms": 2616.9995,
+      "throughput_tok_sec": 258.3110925317334,
+      "rouge_l_f1": 0.11834319526627218,
+      "quality_flag_passed": true
+    },
+    {
+      "id": 3,
+      "category": "summarization",
+      "generated_text": "The Transformer architecture uses self-attention mechanisms to enable parallelization during training and significantly improve performance on sequence-to-sequence tasks like translation and text summarization.",
+      "latency_ms": 121.5046,
+      "throughput_tok_sec": 263.36451459450916,
+      "rouge_l_f1": 0.7169811320754716,
+      "quality_flag_passed": true
+    },
+    {
+      "id": 4,
+      "category": "translation",
+      "generated_text": "The French translation of \"The early bird catches the worm, but the second mouse gets the cheese\" is:\n\"L'autre l\u00e2che se met en t\u00eate de mouton, mais le second chat gagne le r\u00f4ti.\"\n\nMeaning change: The phrase means that the first person has a better chance of success than others when trying to achieve something. This reflects how early starts can often lead to unexpected outcomes or successes.\n\nThe French translation preserves the original meaning while using a slightly different wording structure, which is consistent with formal writing or poetry where a particular word is used more frequently in some languages.",
+      "latency_ms": 474.0514,
+      "throughput_tok_sec": 259.46553475002924,
+      "rouge_l_f1": 0.24657534246575344,
+      "quality_flag_passed": true
+    },
+    {
+      "id": 5,
+      "category": "factual_qa",
+      "generated_text": "Supervised learning and unsupervised learning are two different categories in machine learning where one is used to learn a model from labeled data, while the other is used to analyze unlabeled data for finding patterns or making predictions based on available information.\n\nIn supervised learning, we have known data points that come with corresponding labels (or outcomes). The goal is to learn a function that can map input data to output data. This type of learning often involves building models like neural networks, decision trees, and support vector machines.\n\nReal-world examples of supervised learning include:\n1. **Classification**: This involves predicting the class label for new, unseen data points based on patterns learned from labeled data.\n2. **Regression**: Predicting continuous numerical values (e.g., height, weight) for new observations based on pre-existing data or existing models that are trained to predict continuous outcomes.\n\nIn unsupervised learning, we have unlabeled input data and need to discover patterns or structure in it. The goal is to learn a model that can categorize the data into groups or clusters without any explicit labels assigned beforehand.\nReal-world examples of unsupervised learning include:\n1. **Dimensionality Reduction**: This involves reducing the number of dimensions of an original high-dimensional dataset into fewer dimensions (e.g., using principal component analysis), often by finding patterns and correlations that are important for understanding the data.\n2. **Clustering**: Groups similar observations together, with new clusters formed based on a shared characteristic.\n\nBoth supervised learning and unsupervised learning have their applications in various fields such as image recognition, natural language processing, recommendation systems, spam filtering, and more.",
+      "latency_ms": 1286.4923,
+      "throughput_tok_sec": 254.95683106692516,
+      "rouge_l_f1": 0.14426229508196722,
+      "quality_flag_passed": true
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuickBite - Voice AI Agent</title>
+    <!-- Use Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+    </div>
+
+    <main class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <span class="logo-icon">🍔</span>
+                <h1>QuickBite Support</h1>
+            </div>
+            <div class="status-indicator">
+                <span id="connection-status" class="status-text disconnected">Disconnected</span>
+                <span id="status-dot" class="status-dot disconnected"></span>
+            </div>
+        </header>
+
+        <section class="agent-interface">
+            <div class="agent-avatar-container">
+                <div id="agent-glow" class="glow-ring"></div>
+                <div class="agent-avatar">
+                    <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Zara&backgroundColor=transparent" alt="Zara AI">
+                </div>
+            </div>
+            <h2 id="agent-state-text">Ready to connect</h2>
+            <p id="agent-subtitle">Connect to start talking with Zara.</p>
+        </section>
+
+        <section class="controls">
+            <div class="input-group">
+                <input type="text" id="room-name" value="support-room-1" placeholder="Room Name" class="glass-input">
+                <input type="text" id="user-name" value="Customer" placeholder="Your Name" class="glass-input">
+            </div>
+            <div class="button-group">
+                <button id="connect-btn" class="btn primary-btn">Connect & Talk</button>
+                <button id="disconnect-btn" class="btn secondary-btn" disabled>Disconnect</button>
+            </div>
+            <div class="mic-controls">
+                <button id="mute-btn" class="btn icon-btn" disabled>
+                    <svg id="mic-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" y1="19" x2="12" y2="23"></line><line x1="8" y1="23" x2="16" y2="23"></line></svg>
+                </button>
+            </div>
+        </section>
+        
+        <!-- Audio elements will be added by LiveKit dynamically or we can provide an audio element -->
+        <div id="audio-container"></div>
+    </main>
+
+    <aside class="logs-panel">
+        <div class="logs-header">
+            <h3>Pipeline Logs</h3>
+            <button id="clear-logs-btn" class="btn icon-btn" title="Clear Logs">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+            </button>
+        </div>
+        <div id="logs-container" class="logs-container">
+            <div class="log-entry system">Awaiting connection...</div>
+        </div>
+    </aside>
+
+    <!-- LiveKit JS Client SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/livekit-client/dist/livekit-client.umd.min.js"></script>
+    <script src="/static/app.js"></script>
+</body>
+</html>

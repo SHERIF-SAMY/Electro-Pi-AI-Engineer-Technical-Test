@@ -1,0 +1,10 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "section4-model-deployment"
+version = "1.0.0"
+description = "FastAPI + Ollama inference service"
+authors = [{name = "AI Engineer"}]
+requires-python = ">=3.11"
