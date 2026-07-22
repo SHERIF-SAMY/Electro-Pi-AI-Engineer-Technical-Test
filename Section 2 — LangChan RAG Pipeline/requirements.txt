@@ -1,0 +1,27 @@
+# ── Web Framework ──────────────────────────────────────────────────────────
+fastapi==0.115.0
+uvicorn[standard]==0.30.0
+python-multipart==0.0.9
+python-dotenv==1.0.1
+
+# ── Data Validation ────────────────────────────────────────────────────────
+pydantic==2.9.2
+pydantic-settings==2.4.0
+
+# ── LangChain (0.3.x — stable, modern LCEL APIs) ──────────────────────────
+langchain==0.3.7
+langchain-core==0.3.17
+langchain-community==0.3.7
+langchain-text-splitters==0.3.2
+langchain-groq==0.2.1
+
+# ── Embeddings ─────────────────────────────────────────────────────────────
+# langchain-ollama is the official replacement for the deprecated
+# langchain_community.embeddings.OllamaEmbeddings
+langchain-ollama==0.2.0
+
+# ── Vector Store ────────────────────────────────────────────────────────────
+faiss-cpu==1.9.0.post1
+
+# ── PDF Processing ──────────────────────────────────────────────────────────
+pypdf==4.3.1
